@@ -1,5 +1,5 @@
 require 'pry'
-
+#=begin
 languages = {
   :oo => {
     :ruby => {
@@ -31,7 +31,7 @@ languages = {
  
   }
 }
-
+#=end
 def reformat1(languages)
   new_hash = {}
   
@@ -42,22 +42,31 @@ def reformat1(languages)
   end
   
   new_hash
+  #binding.pry
 end
 
 def reformat2(languages)
-  new_hash = languages.collect do |key, value|
+  languages1 = languages
+  #binding.pry
+  new_hash = languages1.collect do |key, value|
+    #binding.pry
     value.each do |key1, value1|
-      reformat1(languages).each do |key2, value2|
-        reformat1(languages)[key2] = value1
+      #binding.pry
+      reformat1(languages1).each do |key2, value2|
+        #binding.pry
+        reformat1(languages1)[key2] = value1
+        #binding.pry
       end
     end
+    #binding.pry
   end
-  
+  binding.pry
   new_hash[1].each do |key, value|
     new_hash[0][key] = value
   end
-  
+  binding.pry
   new_hash[0]
+  binding.pry
 end
 
 def reformat3(languages)
