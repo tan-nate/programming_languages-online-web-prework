@@ -2,7 +2,7 @@ require 'pry'
 
 def reformat_languages(languages)
   new_hash = {}
-  
+  binding.pry
   languages.each do |style, language_hash|
     style_array = []
     
