@@ -108,14 +108,14 @@ def reformat_languages(languages)
   languages.each do |style, language_hash|
     language_hash.each do |language, type_hash|
       new_hash[language] = type_hash
+      new_hash[language][:style] = style
     end
   end
   
   styles = []
     
   languages.each do |style, language_hash|
-    if language_hash.keys.include?(style)
-      styles << language_hash
+    
     end
     binding.pry
   end
