@@ -108,7 +108,8 @@ def reformat_languages(languages)
   languages.each do |style, language_hash|
     language_hash.each do |language, type_hash|
       new_hash[language] = type_hash
-      new_hash[language][:style] = style
+      new_hash[language][:style] = style_array
+      binding.pry
     end
   end
   
