@@ -1,5 +1,5 @@
 require 'pry'
-#=begin
+
 languages = {
   :oo => {
     :ruby => {
@@ -31,7 +31,7 @@ languages = {
  
   }
 }
-#=end
+=begin
 def reformat1(languages)
   new_hash = {}
   
@@ -46,28 +46,44 @@ def reformat1(languages)
 end
 
 def reformat2(languages)
-  languages1 = languages
   #binding.pry
-  new_hash = languages1.collect do |key, value|
+  new_hash = {}
+  reformat1(languages).each do |key, value|
+    new_hash[key] = value
+  end
+  
+  languages.each do |key, value|
+  #binding.pry
+    value.each do |key1, value1|
+    #binding.pry
+      new_hash.each do|key2, value2|
+      #binding.pry
+        new_hash[key2] = value1
+      end
+    end
+  end
+  #binding.pry
+end
+
+  do |key, value|
     #binding.pry
     value.each do |key1, value1|
       #binding.pry
-      reformat1(languages1).each do |key2, value2|
+      reformat1(languages).each do |key2, value2|
         #binding.pry
-        reformat1(languages1)[key2] = value1
+        reformat1(languages)[key2] = value1
         #binding.pry
       end
     end
     #binding.pry
   end
-  binding.pry
+  #binding.pry
   new_hash[1].each do |key, value|
     new_hash[0][key] = value
   end
   binding.pry
   new_hash[0]
-  binding.pry
-end
+  #binding.pry
 
 def reformat3(languages)
   reformat2(languages).each do |key1, value1|
@@ -84,9 +100,29 @@ def reformat3(languages)
     #binding.pry
   end
 end
+=end
 
 def reformat_languages(languages)
-  reformat3(languages)
+  new_hash = {}
+  
+  languages.each do |style, language_hash|
+    language_hash.each do |language, type_hash|
+      new_hash[language] = type_hash
+    end
+  end
+  
+  styles = []
+    
+  languages.each do |style, language_hash|
+    if language_hash.keys.include?(style)
+      styles << language_hash
+    end
+    binding.pry
+  end
+    
+  reformat2(languages)[key1][:style] = [styles].flatten
+  #binding.pry
+  new_hash
 end
 
 binding.pry
