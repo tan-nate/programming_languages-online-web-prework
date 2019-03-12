@@ -112,6 +112,7 @@ def reformat_languages(languages)
     end
   end
   
+=begin
   styles = []
     
   languages.each do |style, language_hash|
@@ -123,6 +124,8 @@ def reformat_languages(languages)
   reformat2(languages)[key1][:style] = [styles].flatten
   #binding.pry
   new_hash
+=end
+
 end
 
-# binding.pry
+ binding.pry
