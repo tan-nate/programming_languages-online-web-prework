@@ -19,5 +19,4 @@ def reformat_languages(languages)
   end
   
   new_hash
-  binding.pry
 end
