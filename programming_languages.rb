@@ -8,7 +8,7 @@ def reformat_languages(languages)
     binding.pry
     language_hash.each do |language, type_hash|
       new_hash[language] = type_hash
-      
+      binding.pry
       unless style_array.include?(style)
         style_array << style
       end
