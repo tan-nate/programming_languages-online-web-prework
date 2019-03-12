@@ -110,6 +110,7 @@ def reformat_languages(languages)
       new_hash[language] = type_hash
       if style_array !include?(style)
         style_array << style
+      end
       new_hash[language][:style] = style_array
     end
   end
