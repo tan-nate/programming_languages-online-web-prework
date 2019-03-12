@@ -5,15 +5,16 @@ def reformat_languages(languages)
   
   languages.each do |style, language_hash|
     style_array
-    binding.pry
+    
     language_hash.each do |language, type_hash|
       new_hash[language] = type_hash
-      binding.pry
+     
       unless style_array.include?(style)
         style_array << style
       end
       
       new_hash[language][:style] = style_array
+      binding.pry
     end
   end
 end
